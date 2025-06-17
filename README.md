@@ -17,6 +17,29 @@ This script allows you to:
 - Safely handle locked files during running Office, OneDrive or AzureAD sessions.
 - Fully compatible with dual personal & professional Microsoft accounts.
 
+## Why this script exists
+
+I was tired of constantly running into Microsoft 365 (M365) and OneDrive sign-in issues, with no real solution provided by Microsoft or found in community forums.
+
+Typical symptoms include:
+
+- Repeated "Sign in required" prompts.
+- Infinite login loops ("Sign-in window keeps popping up").
+- Messages like:  
+  *"You're not connected"*, *"Can't verify your subscription"*, *"We couldn't connect to the server"*, or *"Activation failed"*.
+- OneDrive stuck on *"Signing in..."*, *"Unable to sync files"*, or *"There was a problem connecting to OneDrive"*.
+- Apps refusing to activate or asking for credentials every time.
+- Common error codes:  
+  `0x8004FC12`, `0x8004FC01`, `0xCAA70004`, `0xCAA70007`, `0xCAA20003`, `80070005` (access denied), `AADSTS50020`, `AADSTS50076` (MFA issues).
+
+These issues often come from local authentication data corruption:
+- Broken cached credentials
+- Invalid authentication tokens (WAM / Web Account Manager)
+- Expired certificates (Workplace Join)
+- Locked Windows internal files related to M365 sign-in
+
+This script fully resets all Microsoft 365 local sign-in data, allowing Word, Excel, Outlook, Teams, and OneDrive to start fresh, reconnect and synchronize correctly — without needing a full reinstall or system reset.
+
 ---
 
 
@@ -80,7 +103,7 @@ Originally written and field-tested by fdecourt
 
 ---
 
-# 🇫🇷 **VERSION FRANÇAISE**
+# **VERSION FRANÇAISE**
 
 ---
 
@@ -102,6 +125,29 @@ Ce script permet de :
 - Planifier la suppression des fichiers verrouillés au redémarrage (via PendingFileRenameOperations).
 - Gérer proprement les fichiers verrouillés même lorsque Office, OneDrive ou AzureAD sont encore actifs.
 - Compatible avec la coexistence de comptes professionnels et personnels Microsoft 365.
+
+## Pourquoi ce script existe
+
+J'en avais marre de rencontrer régulièrement des problèmes de connexion avec Microsoft 365 (M365) et OneDrive, sans solution proposée par Microsoft ou sur les forums d'entraide.
+
+Les symptômes les plus fréquents sont :
+
+- Messages répétés *"Veuillez vous reconnecter"* ou *"Connexion requise"*.
+- Boucles infinies de connexion (*"La fenêtre de connexion réapparaît en boucle"*).
+- Messages d'erreur du type :  
+  *"Vous n'êtes pas connecté"*, *"Impossible de vérifier votre abonnement"*, *"Impossible de se connecter au serveur"*, *"L'activation a échoué"*.
+- OneDrive bloqué sur *"Connexion en cours..."*, *"Impossible de synchroniser les fichiers"*, ou *"Un problème est survenu lors de la connexion à OneDrive"*.
+- Applications Office demandant les identifiants à chaque ouverture.
+- Codes d'erreur fréquents :  
+  `0x8004FC12`, `0x8004FC01`, `0xCAA70004`, `0xCAA70007`, `0xCAA20003`, `80070005` (accès refusé), `AADSTS50020`, `AADSTS50076` (MFA, double authentification).
+
+Ces dysfonctionnements proviennent très souvent d'une corruption des données d'identification locales :
+- Identifiants stockés obsolètes ou incohérents
+- Jetons de connexion invalides (WAM / Web Account Manager)
+- Certificats expirés (Workplace Join)
+- Fichiers systèmes Windows verrouillés liés à l'authentification M365
+
+Ce script réinitialise en profondeur toutes les données locales d'authentification Microsoft 365, permettant à Word, Excel, Outlook, Teams et OneDrive de repartir sur une base propre et de se reconnecter normalement, sans devoir réinstaller Windows ou réinitialiser entièrement le poste.
 
 ---
 
